@@ -1,6 +1,7 @@
 #include "menuglowne.h"
 #include "ui_menuglowne.h"
 
+
 MenuGlowne::MenuGlowne(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MenuGlowne)
@@ -13,3 +14,9 @@ MenuGlowne::~MenuGlowne()
     delete ui;
 }
 
+
+void MenuGlowne::on_dodawanieButton_clicked()
+{
+    mDodawanie = new Dodawanie(this);
+    mDodawanie->show();
+}

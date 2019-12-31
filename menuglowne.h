@@ -2,6 +2,7 @@
 #define MENUGLOWNE_H
 
 #include <QMainWindow>
+#include "dodawanie.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MenuGlowne; }
@@ -15,7 +16,11 @@ public:
     MenuGlowne(QWidget *parent = nullptr);
     ~MenuGlowne();
 
+private slots:
+    void on_dodawanieButton_clicked();
+
 private:
     Ui::MenuGlowne *ui;
+    Dodawanie *mDodawanie;
 };
 #endif // MENUGLOWNE_H
