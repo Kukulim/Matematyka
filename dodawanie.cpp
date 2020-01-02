@@ -69,12 +69,35 @@ void Dodawanie::sprawdzOdpowiedz()
     ui->sumaEdit->clear();
     if(punkty==10)
     {
-        QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania");
+        QMessageBox::StandardButton odpowiedz;
+        odpowiedz = QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania",QMessageBox::Yes | QMessageBox::No);
+        if(odpowiedz==QMessageBox::Yes)
+        {
+            zycia=5;
+            punkty=0;
+        }
+        if(odpowiedz==QMessageBox::No)
+        {
+
+        }
+
     }
     if(zycia==0)
     {
-        QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz." );
+    QMessageBox::StandardButton odpowiedz;
+    odpowiedz = QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz.",QMessageBox::Yes | QMessageBox::No );
+
+    if(odpowiedz==QMessageBox::Yes)
+    {
+        zycia=5;
+        punkty=0;
     }
+    if(odpowiedz==QMessageBox::No)
+    {
+
+    }
+
+}
 }
 
 void Dodawanie::sprawdzOdpowiedzTrudne()
@@ -92,8 +115,34 @@ void Dodawanie::sprawdzOdpowiedzTrudne()
     ui->sumaEdit_2->clear();
     if(punkty==10)
     {
-        QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania");
+        QMessageBox::StandardButton odpowiedz;
+        odpowiedz = QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania",QMessageBox::Yes | QMessageBox::No);
+        if(odpowiedz==QMessageBox::Yes)
+        {
+            zycia=5;
+            punkty=0;
+        }
+        if(odpowiedz==QMessageBox::No)
+        {
+
+        }
+
     }
+    if(zycia==0)
+    {
+    QMessageBox::StandardButton odpowiedz;
+    odpowiedz = QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz.",QMessageBox::Yes | QMessageBox::No );
+
+    if(odpowiedz==QMessageBox::Yes)
+    {
+        zycia=5;
+        punkty=0;
+    }
+    if(odpowiedz==QMessageBox::No)
+    {
+
+    }
+}
 }
 
 void Dodawanie::ustawZycie()
@@ -106,17 +155,35 @@ void Dodawanie::ustawZycie()
     QPixmap zycie1(":/img/1zyc");
     QPixmap zycie0(":/img/0zyc");
     if (zycia==5)
-    ui->zycieGrafikaView->setPixmap(zycie5);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie5);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie5);
+    }
     if (zycia==4)
-    ui->zycieGrafikaView->setPixmap(zycie4);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie4);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie4);
+    }
     if (zycia==3)
-    ui->zycieGrafikaView->setPixmap(zycie3);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie3);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie3);
+    }
     if (zycia==2)
-    ui->zycieGrafikaView->setPixmap(zycie2);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie2);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie2);
+    }
     if (zycia==1)
-    ui->zycieGrafikaView->setPixmap(zycie1);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie1);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie1);
+    }
     if (zycia==0)
-    ui->zycieGrafikaView->setPixmap(zycie0);
+    {
+        ui->zycieGrafikaView->setPixmap(zycie0);
+        ui->zycieTrudneGrafikaView->setPixmap(zycie0);
+    }
 }
 
 void Dodawanie::on_sprawdzButton_clicked()

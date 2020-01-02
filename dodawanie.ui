@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Dodawanie</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -41,7 +41,7 @@ color:rgb(170, 0, 0);
 background-color:rgb(85, 170, 0);</string>
        </property>
        <property name="text">
-        <string>Sprawdz wynik</string>
+        <string>Sprawdź wynik</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="punktyEdit">
@@ -506,25 +506,6 @@ color:rgb(170, 0, 0);</string>
         <string>Punkty:</string>
        </property>
       </widget>
-      <widget class="QGraphicsView" name="zyciaGrafikaTrudneView">
-       <property name="geometry">
-        <rect>
-         <x>690</x>
-         <y>30</y>
-         <width>251</width>
-         <height>50</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>251</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-image:url(:/img/5zyc.png);</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="sprawdzTrudneButton">
        <property name="geometry">
         <rect>
@@ -546,7 +527,20 @@ color:rgb(170, 0, 0);
 background-color:rgb(85, 170, 0);</string>
        </property>
        <property name="text">
-        <string>Sprawdz wynik</string>
+        <string>Sprawdź wynik</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="zycieTrudneGrafikaView">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>30</y>
+         <width>251</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
       <widget class="QWidget" name="">
