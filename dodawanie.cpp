@@ -19,38 +19,147 @@ Dodawanie::~Dodawanie()
 
 void Dodawanie::zadajPytanie()
 {
-    ui->punktyEdit->setText(QString::number(punkty));
-    ustawZycie();
+    ui->sumaEdit->setPlaceholderText("?");
+    if(rodzajDzialania=="dodawanie")
+    {
+        ui->plusEdit->setText("+");
+        ui->punktyEdit->setText(QString::number(punkty));
+        ustawZycie();
         do
         {
-        skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
-        skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
-        suma=skladnikPierwszy+skladnikDrogi;
+            skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            suma=skladnikPierwszy+skladnikDrogi;
         }
         while(suma>stopienTrudnosci);
 
 
-    ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
-    ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
+        ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
+        ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
+    }
+    if(rodzajDzialania=="odejmowanie")
+    {
+        ui->plusEdit->setText("-");
+        ui->punktyEdit->setText(QString::number(punkty));
+        ustawZycie();
+        do
+        {
+            skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            suma=skladnikPierwszy-skladnikDrogi;
+        }
+        while(suma>stopienTrudnosci||suma<0);
+
+
+        ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
+        ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
+    }
+    if(rodzajDzialania=="mnozenie")
+    {
+        ui->plusEdit->setText("*");
+        ui->punktyEdit->setText(QString::number(punkty));
+        ustawZycie();
+        do
+        {
+            skladnikPierwszy = QRandomGenerator::system()->bounded(10);
+            skladnikDrogi = QRandomGenerator::system()->bounded(10);
+            suma=skladnikPierwszy*skladnikDrogi;
+        }
+        while(suma>stopienTrudnosci);
+
+
+        ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
+        ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
+    }
+    if(rodzajDzialania=="dzielenie")
+    {
+        ui->plusEdit->setText("/");
+        ui->punktyEdit->setText(QString::number(punkty));
+        ustawZycie();
+        do
+        {
+            skladnikPierwszy = QRandomGenerator::system()->bounded(20);
+            skladnikDrogi = QRandomGenerator::system()->bounded(5)+1;
+            skladnikPierwszy= skladnikDrogi*skladnikPierwszy;
+            suma=skladnikPierwszy/skladnikDrogi;
+        }
+        while(suma>stopienTrudnosci);
+
+
+        ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
+        ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
+    }
 }
 
 void Dodawanie::zadajPytanieTrudne()
 {
-    ui->punktyEdit_2->setText(QString::number(punkty));
-    ustawZycie();
-    do
+    ui->sumaEdit_2->setPlaceholderText("?");
+    if(rodzajDzialania=="dodawanie")
     {
-    skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
-    skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
-    skladnikTrzeci = QRandomGenerator::system()->bounded(stopienTrudnosci);
-    suma=skladnikPierwszy+skladnikDrogi+skladnikTrzeci;
+        ui->plusTrudneEdit->setText("+");
+        ui->plusDwaTrudneEdit->setText("+");
+        ui->punktyEdit_2->setText(QString::number(punkty));
+        ustawZycie();
+        do
+        {
+            skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            skladnikTrzeci = QRandomGenerator::system()->bounded(stopienTrudnosci);
+            suma=skladnikPierwszy+skladnikDrogi+skladnikTrzeci;
+        }
+        while(suma>50);
+
+
+        ui->skladnikPierwszyEdit_2->setText(QString::number(skladnikPierwszy));
+        ui->skladnikDrogiEdit_2->setText(QString::number(skladnikDrogi));
+        ui->skladnikTrzeciEdit_2->setText(QString::number(skladnikTrzeci));
     }
-    while(suma>50);
+    if(rodzajDzialania=="odejmowanie")
+    {
+
+        {
+            ui->plusTrudneEdit->setText("-");
+            ui->plusDwaTrudneEdit->setText("-");
+            ui->punktyEdit_2->setText(QString::number(punkty));
+            ustawZycie();
+            do
+            {
+                skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
+                skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
+                skladnikTrzeci = QRandomGenerator::system()->bounded(stopienTrudnosci);
+                suma=skladnikPierwszy-skladnikDrogi-skladnikTrzeci;
+            }
+            while(suma>stopienTrudnosci||suma<0);
 
 
-ui->skladnikPierwszyEdit_2->setText(QString::number(skladnikPierwszy));
-ui->skladnikDrogiEdit_2->setText(QString::number(skladnikDrogi));
-ui->skladnikTrzeciEdit_2->setText(QString::number(skladnikTrzeci));
+            ui->skladnikPierwszyEdit_2->setText(QString::number(skladnikPierwszy));
+            ui->skladnikDrogiEdit_2->setText(QString::number(skladnikDrogi));
+            ui->skladnikTrzeciEdit_2->setText(QString::number(skladnikTrzeci));
+        }
+    }
+    if(rodzajDzialania=="mnozenie")
+    {
+
+        {
+            ui->plusTrudneEdit->setText("*");
+            ui->plusDwaTrudneEdit->setText("*");
+            ui->punktyEdit_2->setText(QString::number(punkty));
+            ustawZycie();
+            do
+            {
+                skladnikPierwszy = QRandomGenerator::system()->bounded(10);
+                skladnikDrogi = QRandomGenerator::system()->bounded(10);
+                skladnikTrzeci = QRandomGenerator::system()->bounded(10);
+                suma=skladnikPierwszy*skladnikDrogi*skladnikTrzeci;
+            }
+            while(suma>stopienTrudnosci||suma>100);
+
+
+            ui->skladnikPierwszyEdit_2->setText(QString::number(skladnikPierwszy));
+            ui->skladnikDrogiEdit_2->setText(QString::number(skladnikDrogi));
+            ui->skladnikTrzeciEdit_2->setText(QString::number(skladnikTrzeci));
+        }
+    }
 }
 
 void Dodawanie::sprawdzOdpowiedz()
@@ -67,6 +176,7 @@ void Dodawanie::sprawdzOdpowiedz()
     ui->punktyEdit->setText(QString::number(punkty));
     ustawZycie();
     ui->sumaEdit->clear();
+    ui->sumaEdit->setPlaceholderText("?");
     if(punkty==10)
     {
         QMessageBox::StandardButton odpowiedz;
@@ -116,31 +226,23 @@ void Dodawanie::sprawdzOdpowiedzTrudne()
     if(punkty==10)
     {
         QMessageBox::StandardButton odpowiedz;
-        odpowiedz = QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania",QMessageBox::Yes | QMessageBox::No);
+        odpowiedz = QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania",QMessageBox::Yes);
         if(odpowiedz==QMessageBox::Yes)
         {
             zycia=5;
             punkty=0;
-        }
-        if(odpowiedz==QMessageBox::No)
-        {
-
         }
 
     }
     if(zycia==0)
     {
     QMessageBox::StandardButton odpowiedz;
-    odpowiedz = QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz.",QMessageBox::Yes | QMessageBox::No );
+    odpowiedz = QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz.",QMessageBox::Yes);
 
     if(odpowiedz==QMessageBox::Yes)
     {
         zycia=5;
         punkty=0;
-    }
-    if(odpowiedz==QMessageBox::No)
-    {
-
     }
 }
 }
@@ -215,6 +317,13 @@ void Dodawanie::on_trudneButton_clicked()
 
 void Dodawanie::on_bardzoTrudneButton_clicked()
 {
+    if(rodzajDzialania=="dzielenie")
+    {
+        ui->stackedWidget->setCurrentWidget(ui->dodawaniLatwePage);
+        zadajPytanie();
+        stopienTrudnosci=400;
+    }
+    else
     ui->stackedWidget->setCurrentWidget(ui->dodatanieTrudnePage);
     stopienTrudnosci=100;
     zadajPytanieTrudne();

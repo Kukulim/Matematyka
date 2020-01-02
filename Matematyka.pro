@@ -18,18 +18,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     dodawanie.cpp \
     main.cpp \
-    menuglowne.cpp \
-    odejmowanie.cpp
+    menuglowne.cpp
 
 HEADERS += \
     dodawanie.h \
-    menuglowne.h \
-    odejmowanie.h
+    menuglowne.h
 
 FORMS += \
     dodawanie.ui \
-    menuglowne.ui \
-    odejmowanie.ui
+    menuglowne.ui
 
 TRANSLATIONS += \
     Matematyka_pl_PL.ts

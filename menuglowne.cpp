@@ -19,10 +19,27 @@ void MenuGlowne::on_dodawanieButton_clicked()
 {
     mDodawanie = new Dodawanie(this);
     mDodawanie->show();
+    mDodawanie->rodzajDzialania="dodawanie";
 }
 
 void MenuGlowne::on_odejmowanieButton_clicked()
 {
-    mOdejmowanie = new Odejmowanie(this);
-    mOdejmowanie->show();
+    mDodawanie = new Dodawanie(this);
+    mDodawanie->show();
+    mDodawanie->rodzajDzialania="odejmowanie";
 }
+
+void MenuGlowne::on_mnozenieButton_clicked()
+{
+    mDodawanie = new Dodawanie(this);
+    mDodawanie->show();
+    mDodawanie->rodzajDzialania="mnozenie";
+}
+
+void MenuGlowne::on_dzielenieButton_clicked()
+{
+    mDodawanie = new Dodawanie(this);
+    mDodawanie->show();
+    mDodawanie->rodzajDzialania="dzielenie";
+}
+

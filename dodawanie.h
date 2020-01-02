@@ -34,6 +34,8 @@ public:
     void sprawdzOdpowiedzTrudne();
     void ustawZycie();
 
+    QString rodzajDzialania ="";
+
 private slots:
 
     void on_sprawdzButton_clicked();

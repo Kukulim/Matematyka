@@ -578,7 +578,7 @@ background-color:rgb(255, 170, 255);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="plusEdit_2">
+         <widget class="QLineEdit" name="plusTrudneEdit">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -632,7 +632,7 @@ background-color:rgb(255, 170, 255);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="plusDwaEdit_2">
+         <widget class="QLineEdit" name="plusDwaTrudneEdit">
           <property name="enabled">
            <bool>false</bool>
           </property>
