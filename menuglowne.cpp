@@ -20,3 +20,9 @@ void MenuGlowne::on_dodawanieButton_clicked()
     mDodawanie = new Dodawanie(this);
     mDodawanie->show();
 }
+
+void MenuGlowne::on_odejmowanieButton_clicked()
+{
+    mOdejmowanie = new Odejmowanie(this);
+    mOdejmowanie->show();
+}

@@ -18,15 +18,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     dodawanie.cpp \
     main.cpp \
-    menuglowne.cpp
+    menuglowne.cpp \
+    odejmowanie.cpp
 
 HEADERS += \
     dodawanie.h \
-    menuglowne.h
+    menuglowne.h \
+    odejmowanie.h
 
 FORMS += \
     dodawanie.ui \
-    menuglowne.ui
+    menuglowne.ui \
+    odejmowanie.ui
 
 TRANSLATIONS += \
     Matematyka_pl_PL.ts
@@ -35,3 +38,6 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Zasoby.qrc

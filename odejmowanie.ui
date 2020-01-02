@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Odejmowanie</class>
+ <widget class="QDialog" name="Odejmowanie">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69))</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="menuPoziomTrudnosciOdejmowaniePage">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="latweButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 26pt &quot;Comic Sans MS&quot;;
+color:rgb(85, 0, 255);
+background-color:rgb(170, 170, 255);</string>
+         </property>
+         <property name="text">
+          <string>Łatwe</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="srednieButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 26pt &quot;Comic Sans MS&quot;;
+color:rgb(85, 0, 255);
+background-color:rgb(170, 170, 255);</string>
+         </property>
+         <property name="text">
+          <string>Srednie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="trudneButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 26pt &quot;Comic Sans MS&quot;;
+color:rgb(85, 0, 255);
+background-color:rgb(170, 170, 255);</string>
+         </property>
+         <property name="text">
+          <string>Trudne</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="bardzoTrudneButton">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 26pt &quot;Comic Sans MS&quot;;
+color:rgb(85, 0, 255);
+background-color:rgb(170, 170, 255);</string>
+         </property>
+         <property name="text">
+          <string>Bardzo trudne</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="odejmowaniePage">
+      <widget class="QLineEdit" name="punktyEdit">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>360</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plusEdit">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="punktyLabel">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>360</y>
+         <width>37</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Punkty:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="sumaEdit">
+       <property name="geometry">
+        <rect>
+         <x>810</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="skladnikPierwszyEdit">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="rownasieEdit">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>=</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sprawdzButton">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>390</y>
+         <width>121</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sprawdz wynik</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="zycieLabel">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>70</y>
+         <width>47</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Życia:</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="zyciaEdit">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>40</y>
+         <width>104</width>
+         <height>70</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="skladnikDrogiEdit">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>140</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="odejmowanieTrudnePage">
+      <widget class="QLineEdit" name="plusEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>150</y>
+         <width>21</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="skladnikDrogiEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="punktyLabel_2">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>360</y>
+         <width>37</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Punkty:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="rownasieEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>=</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="plusDwaEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>150</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="zycieLabel_2">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>70</y>
+         <width>47</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Życia:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="sumaEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="skladnikPierwszyEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>150</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="punktyEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>360</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="zyciaEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>40</y>
+         <width>104</width>
+         <height>70</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="skladnikTrzeciEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>150</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sprawdzButton_2">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>390</y>
+         <width>121</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sprawdz wynik</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

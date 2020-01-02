@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "dodawanie.h"
+#include "odejmowanie.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MenuGlowne; }
@@ -19,8 +20,11 @@ public:
 private slots:
     void on_dodawanieButton_clicked();
 
+    void on_odejmowanieButton_clicked();
+
 private:
     Ui::MenuGlowne *ui;
     Dodawanie *mDodawanie;
+    Odejmowanie *mOdejmowanie;
 };
 #endif // MENUGLOWNE_H

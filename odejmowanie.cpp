@@ -1,51 +1,51 @@
-#include "dodawanie.h"
-#include "ui_dodawanie.h"
+#include "odejmowanie.h"
+#include "ui_odejmowanie.h"
 
-#include <QRandomGenerator64>
+#include <QRandomGenerator>
 #include <QMessageBox>
 
-Dodawanie::Dodawanie(QWidget *parent) :
+Odejmowanie::Odejmowanie(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Dodawanie)
+    ui(new Ui::Odejmowanie)
 {
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentWidget(ui->menuPoziomTrudnosciDodawaniePage);
+    ui->stackedWidget->setCurrentWidget(ui->menuPoziomTrudnosciOdejmowaniePage);
 }
 
-Dodawanie::~Dodawanie()
+Odejmowanie::~Odejmowanie()
 {
     delete ui;
 }
 
-void Dodawanie::zadajPytanie()
+void Odejmowanie::zadajPytanie()
 {
     ui->punktyEdit->setText(QString::number(punkty));
-    ustawZycie();
+    ui->zyciaEdit->setText(QString::number(zycia));
         do
         {
         skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
         skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
-        suma=skladnikPierwszy+skladnikDrogi;
+        suma=skladnikPierwszy-skladnikDrogi;
         }
-        while(suma>stopienTrudnosci);
+        while((suma<0)||(suma>stopienTrudnosci));
 
 
     ui->skladnikPierwszyEdit->setText(QString::number(skladnikPierwszy));
     ui->skladnikDrogiEdit->setText(QString::number(skladnikDrogi));
 }
 
-void Dodawanie::zadajPytanieTrudne()
+void Odejmowanie::zadajPytanieTrudne()
 {
     ui->punktyEdit_2->setText(QString::number(punkty));
-    ustawZycie();
+    ui->zyciaEdit_2->setText(QString::number(zycia));
     do
     {
     skladnikPierwszy = QRandomGenerator::system()->bounded(stopienTrudnosci);
     skladnikDrogi = QRandomGenerator::system()->bounded(stopienTrudnosci);
     skladnikTrzeci = QRandomGenerator::system()->bounded(stopienTrudnosci);
-    suma=skladnikPierwszy+skladnikDrogi+skladnikTrzeci;
+    suma=skladnikPierwszy-skladnikDrogi-skladnikTrzeci;
     }
-    while(suma>50);
+    while((suma>50)||(suma<0));
 
 
 ui->skladnikPierwszyEdit_2->setText(QString::number(skladnikPierwszy));
@@ -53,9 +53,9 @@ ui->skladnikDrogiEdit_2->setText(QString::number(skladnikDrogi));
 ui->skladnikTrzeciEdit_2->setText(QString::number(skladnikTrzeci));
 }
 
-void Dodawanie::sprawdzOdpowiedz()
-{
 
+void Odejmowanie::sprawdzOdpowiedz()
+{
     if (suma==ui->sumaEdit->text().toInt())
     {
         punkty++;
@@ -65,19 +65,15 @@ void Dodawanie::sprawdzOdpowiedz()
         zycia--;
     }
     ui->punktyEdit->setText(QString::number(punkty));
-    ustawZycie();
+    ui->zyciaEdit->setText(QString::number(zycia));
     ui->sumaEdit->clear();
     if(punkty==10)
     {
         QMessageBox::information(this,"WYGRANA","Gratulacje udało ci się, odpowiedzieć na wszystkie pytania");
     }
-    if(zycia==0)
-    {
-        QMessageBox::information(this,"PRZEGRAŁAŚ","PRZEGRAŁAŚ, spróbuj jeszcze raz." );
-    }
 }
 
-void Dodawanie::sprawdzOdpowiedzTrudne()
+void Odejmowanie::sprawdzOdpowiedzTrudne()
 {
     if (suma==ui->sumaEdit_2->text().toInt())
     {
@@ -88,7 +84,7 @@ void Dodawanie::sprawdzOdpowiedzTrudne()
         zycia--;
     }
     ui->punktyEdit_2->setText(QString::number(punkty));
-    ustawZycie();
+    ui->zyciaEdit_2->setText(QString::number(zycia));
     ui->sumaEdit_2->clear();
     if(punkty==10)
     {
@@ -96,64 +92,41 @@ void Dodawanie::sprawdzOdpowiedzTrudne()
     }
 }
 
-void Dodawanie::ustawZycie()
+void Odejmowanie::on_latweButton_clicked()
 {
-
-    QPixmap zycie5(":/img/5zyc");
-    QPixmap zycie4(":/img/4zyc");
-    QPixmap zycie3(":/img/3zyc");
-    QPixmap zycie2(":/img/2zyc");
-    QPixmap zycie1(":/img/1zyc");
-    QPixmap zycie0(":/img/0zyc");
-    if (zycia==5)
-    ui->zycieGrafikaView->setPixmap(zycie5);
-    if (zycia==4)
-    ui->zycieGrafikaView->setPixmap(zycie4);
-    if (zycia==3)
-    ui->zycieGrafikaView->setPixmap(zycie3);
-    if (zycia==2)
-    ui->zycieGrafikaView->setPixmap(zycie2);
-    if (zycia==1)
-    ui->zycieGrafikaView->setPixmap(zycie1);
-    if (zycia==0)
-    ui->zycieGrafikaView->setPixmap(zycie0);
+    ui->stackedWidget->setCurrentWidget(ui->odejmowaniePage);
+    stopienTrudnosci=10;
+    zadajPytanie();
 }
 
-void Dodawanie::on_sprawdzButton_clicked()
+void Odejmowanie::on_srednieButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->odejmowaniePage);
+    stopienTrudnosci=20;
+    zadajPytanie();
+}
+
+void Odejmowanie::on_trudneButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->odejmowaniePage);
+    stopienTrudnosci=100;
+    zadajPytanie();
+}
+
+void Odejmowanie::on_bardzoTrudneButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->odejmowanieTrudnePage);
+    stopienTrudnosci=100;
+    zadajPytanieTrudne();
+}
+
+void Odejmowanie::on_sprawdzButton_clicked()
 {
     sprawdzOdpowiedz();
     zadajPytanie();
 }
 
-void Dodawanie::on_latweButton_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->dodawaniLatwePage);
-    stopienTrudnosci=10;
-    zadajPytanie();
-}
-
-void Dodawanie::on_srednieButton_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->dodawaniLatwePage);
-    stopienTrudnosci=20;
-    zadajPytanie();
-}
-
-void Dodawanie::on_trudneButton_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->dodawaniLatwePage);
-    stopienTrudnosci=100;
-    zadajPytanie();
-}
-
-void Dodawanie::on_bardzoTrudneButton_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->dodatanieTrudnePage);
-    stopienTrudnosci=100;
-    zadajPytanieTrudne();
-}
-
-void Dodawanie::on_sprawdzTrudneButton_clicked()
+void Odejmowanie::on_sprawdzButton_2_clicked()
 {
     sprawdzOdpowiedzTrudne();
     zadajPytanieTrudne();

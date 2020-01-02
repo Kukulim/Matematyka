@@ -1,24 +1,20 @@
-#ifndef DODAWANIE_H
-#define DODAWANIE_H
+#ifndef ODEJMOWANIE_H
+#define ODEJMOWANIE_H
 
 #include <QDialog>
 
 namespace Ui {
-class Dodawanie;
+class Odejmowanie;
 }
 
-class Dodawanie : public QDialog
+class Odejmowanie : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Dodawanie(QWidget *parent = nullptr);
-    ~Dodawanie();
+    explicit Odejmowanie(QWidget *parent = nullptr);
+    ~Odejmowanie();
 
-private:
-    Ui::Dodawanie *ui;
-
-public:
     int skladnikPierwszy=0;
     int skladnikDrogi=0;
     int skladnikTrzeci=0;
@@ -32,16 +28,22 @@ public:
     void zadajPytanieTrudne();
     void sprawdzOdpowiedz();
     void sprawdzOdpowiedzTrudne();
-    void ustawZycie();
 
 private slots:
+    void on_latweButton_clicked();
+
+    void on_srednieButton_clicked();
+
+    void on_trudneButton_clicked();
+
+    void on_bardzoTrudneButton_clicked();
 
     void on_sprawdzButton_clicked();
-    void on_latweButton_clicked();
-    void on_srednieButton_clicked();
-    void on_trudneButton_clicked();
-    void on_bardzoTrudneButton_clicked();
-    void on_sprawdzTrudneButton_clicked();
+
+    void on_sprawdzButton_2_clicked();
+
+private:
+    Ui::Odejmowanie *ui;
 };
 
-#endif // DODAWANIE_H
+#endif // ODEJMOWANIE_H
